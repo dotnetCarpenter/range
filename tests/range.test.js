@@ -68,3 +68,14 @@ test ("Negative steps: Array.from (range(0, -10, -1)) should create an array wit
 		"actual should be able to create an array like expected"
 	)
 })
+
+test ("Array.from (range(0)) should create an empty array", context => {
+	const expected = []
+	const actual = range(0)
+
+	assert.deepStrictEqual (
+		expected,
+		Array.from (actual),
+		"actual should be able to create an array like expected"
+	)
+})
