@@ -19,6 +19,6 @@
   "type": "module",
   "main": "range.js",
   "scripts": {
-    "test": "node tests/range.test.js"
+    "test": "node --test"
   }
 }
