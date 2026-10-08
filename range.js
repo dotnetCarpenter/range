@@ -7,7 +7,7 @@ function range (start=0, stop, step=1) {
 	return {
 		next () {
 			const done  = ! (Math.abs (start) < Math.abs (stop))
-				, value = start
+			    , value = start
 
 			start += step
 
