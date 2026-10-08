@@ -79,3 +79,14 @@ test ("Array.from (range(0)) should create an empty array", context => {
 		"actual should be able to create an array like expected"
 	)
 })
+
+test ("Array.from (range(1, 0)) should immediately stop and create an empty array", context => {
+	const expected = []
+	const actual = range(1, 0)
+
+	assert.deepStrictEqual (
+		expected,
+		Array.from (actual),
+		"actual should be able to create an array like expected"
+	)
+})
