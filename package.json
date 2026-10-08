@@ -1,0 +1,24 @@
+{
+  "name": "range",
+  "version": "1.0.0",
+  "description": "A pythonic range function for javascript.",
+  "keywords": [
+    "range",
+    "iterator"
+  ],
+  "homepage": "https://github.com/dotnetCarpenter/range#readme",
+  "bugs": {
+    "url": "https://github.com/dotnetCarpenter/range/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dotnetCarpenter/range.git"
+  },
+  "license": "MIT",
+  "author": "dotnetCarpenter",
+  "type": "module",
+  "main": "range.js",
+  "scripts": {
+    "test": "node tests/range.test.js"
+  }
+}
