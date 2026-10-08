@@ -1,0 +1,3 @@
+[submodule "pyspeed"]
+	path = pyspeed
+	url = git@github.com:miguelgrinberg/pyspeed.git
