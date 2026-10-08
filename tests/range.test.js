@@ -57,3 +57,14 @@ test ("Array.from (range(0, 10, 3)) should create an array with integers", conte
 		"actual should be able to create an array like expected"
 	)
 })
+
+test ("Negative steps: Array.from (range(0, -10, -1)) should create an array with negative integers", context => {
+	const expected = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+	const actual = range (0, -10, -1)
+
+	assert.deepStrictEqual (
+		expected,
+		Array.from (actual),
+		"actual should be able to create an array like expected"
+	)
+})
