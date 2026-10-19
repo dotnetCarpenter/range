@@ -6,9 +6,9 @@ function bubble (array) {
 	let swapped = false
 
 	for (let i of range (n)) {
-		for (let j of range (0, n-i-1))
-			if (array[j] > array[j+1])
-				swapped = swap (array, j)
+		for (let j of range (0, n - i - 1))
+			if (array[j] > array[j + 1])
+				swapped = swap (array, j, j + 1)
 
 		if (!swapped) break
 	}
@@ -16,7 +16,7 @@ function bubble (array) {
 	return array
 }
 
-function swap (array, j) {
-	[array[j], array[j+1]] = [array[j+1], array[j]]
+function swap (array, i, j) {
+	[array[i], array[j]] = [array[j], array[i]]
 	return true
 }
