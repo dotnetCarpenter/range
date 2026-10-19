@@ -2,7 +2,7 @@ import range from "../range.js"
 import assert from 'node:assert'
 import { test } from 'node:test'
 
-test ("range (10) should create integers from 0 to 9", context => {
+test ("range (10) should create integers from 0 to 9", () => {
 	const expected = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	const actual = range (10)
 
@@ -14,7 +14,18 @@ test ("range (10) should create integers from 0 to 9", context => {
 		)
 })
 
-test ("Array.from (range (10)) should create an array with integers from 0 to 9", context => {
+test ("Generating number sequences for calculations", () => {
+	const expected = 5050
+	const actual = range (1, 101).reduce ((a, b) => a + b)
+
+	assert.strictEqual (
+		expected,
+		actual,
+		`${actual} should equal ${expected}`
+	)
+})
+
+test ("Array.from (range (10)) should create an array with integers from 0 to 9", () => {
 	const expected = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	const actual = range (10)
 
@@ -25,7 +36,7 @@ test ("Array.from (range (10)) should create an array with integers from 0 to 9"
 	)
 })
 
-test ("Array.from (range (1, 11)) should create an array with integers from 1 to 10", context => {
+test ("Array.from (range (1, 11)) should create an array with integers from 1 to 10", () => {
 	const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	const actual = range (1, 11)
 
@@ -36,7 +47,7 @@ test ("Array.from (range (1, 11)) should create an array with integers from 1 to
 	)
 })
 
-test ("Array.from (range (0, 30, 5)) should create an array with integers", context => {
+test ("Array.from (range (0, 30, 5)) should create an array with integers", () => {
 	const expected = [0, 5, 10, 15, 20, 25]
 	const actual = range (0, 30, 5)
 
@@ -47,7 +58,7 @@ test ("Array.from (range (0, 30, 5)) should create an array with integers", cont
 	)
 })
 
-test ("Array.from (range(0, 10, 3)) should create an array with integers", context => {
+test ("Array.from (range(0, 10, 3)) should create an array with integers", () => {
 	const expected = [0, 3, 6, 9]
 	const actual = range (0, 10, 3)
 
@@ -58,7 +69,7 @@ test ("Array.from (range(0, 10, 3)) should create an array with integers", conte
 	)
 })
 
-test ("Negative steps: Array.from (range(0, -10, -1)) should create an array with negative integers", context => {
+test ("Negative steps: Array.from (range(0, -10, -1)) should create an array with negative integers", () => {
 	const expected = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 	const actual = range (0, -10, -1)
 
@@ -69,7 +80,7 @@ test ("Negative steps: Array.from (range(0, -10, -1)) should create an array wit
 	)
 })
 
-test ("Array.from (range(0)) should create an empty array", context => {
+test ("Array.from (range(0)) should create an empty array", () => {
 	const expected = []
 	const actual = range(0)
 
@@ -80,7 +91,7 @@ test ("Array.from (range(0)) should create an empty array", context => {
 	)
 })
 
-test ("Array.from (range(1, 0)) should immediately stop and create an empty array", context => {
+test ("Array.from (range(1, 0)) should immediately stop and create an empty array", () => {
 	const expected = []
 	const actual = range(1, 0)
 
