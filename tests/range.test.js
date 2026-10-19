@@ -1,3 +1,5 @@
+// @ts-check
+
 import range from "../range.js"
 import assert from 'node:assert'
 import { test } from 'node:test'
@@ -81,6 +83,7 @@ test ("Negative steps: Array.from (range(0, -10, -1)) should create an array wit
 })
 
 test ("Array.from (range(0)) should create an empty array", () => {
+	/** @type {undefined[]}	*/
 	const expected = []
 	const actual = range(0)
 
@@ -92,6 +95,7 @@ test ("Array.from (range(0)) should create an empty array", () => {
 })
 
 test ("Array.from (range(1, 0)) should immediately stop and create an empty array", () => {
+	/** @type {undefined[]}	*/
 	const expected = []
 	const actual = range(1, 0)
 

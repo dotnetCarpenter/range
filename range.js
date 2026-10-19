@@ -1,5 +1,11 @@
+// @ts-check
+
 export default range
 
+/**
+ * @param {number?} [stop]
+ * @returns {IteratorObject<number>}
+ */
 function *range (start=0, stop, step=1) {
 	if (stop == null)
 		stop = start, start = 0

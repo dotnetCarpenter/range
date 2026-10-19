@@ -1,6 +1,11 @@
+// @ts-check
+
 import range from "../range.js"
 export default bubble
 
+/**
+ * @param {any[]} array
+ */
 function bubble (array) {
 	const n = array.length
 	let swapped = false
@@ -16,6 +21,11 @@ function bubble (array) {
 	return array
 }
 
+/**
+ * @param {{ [x: number]: any; }} array
+ * @param {number} i
+ * @param {number} j
+ */
 function swap (array, i, j) {
 	[array[i], array[j]] = [array[j], array[i]]
 	return true
