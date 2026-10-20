@@ -16,17 +16,6 @@ test ("range (10) should create integers from 0 to 9", () => {
 		)
 })
 
-test ("Generating number sequences for calculations", () => {
-	const expected = 5050
-	const actual = range (1, 101).reduce ((a, b) => a + b)
-
-	assert.strictEqual (
-		expected,
-		actual,
-		`${actual} should equal ${expected}`
-	)
-})
-
 test ("Array.from (range (10)) should create an array with integers from 0 to 9", () => {
 	const expected = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	const actual = range (10)
@@ -85,7 +74,7 @@ test ("Negative steps: Array.from (range(0, -10, -1)) should create an array wit
 test ("Array.from (range(0)) should create an empty array", () => {
 	/** @type {undefined[]}	*/
 	const expected = []
-	const actual = range(0)
+	const actual = range (0)
 
 	assert.deepStrictEqual (
 		expected,
@@ -97,11 +86,37 @@ test ("Array.from (range(0)) should create an empty array", () => {
 test ("Array.from (range(1, 0)) should immediately stop and create an empty array", () => {
 	/** @type {undefined[]}	*/
 	const expected = []
-	const actual = range(1, 0)
+	const actual = range (1, 0)
 
 	assert.deepStrictEqual (
 		expected,
 		Array.from (actual),
 		"actual should be able to create an array like expected"
+	)
+})
+
+test ("Generating number sequences for calculations", () => {
+	const expected = 5050
+	const actual = range (1, 101).reduce ((a, b) => a + b)
+
+	assert.strictEqual (
+		expected,
+		actual,
+		`${actual} should equal ${expected}`
+	)
+})
+
+test ("Lazily map, filter reduce over 4 indices", () => {
+	const expected = 114
+	const actual = range(100_000_000)
+		.map (x => 3*x)           // 0, 3, 6, 9, 12, 15, 18, 21, ...
+		.filter (x => x % 5 == 1) // 6, 21, 36, 51, 66, ...
+		.take (4)                 // 6, 21, 36, 51
+		.reduce ((a, b) => a + b) // Sum: 114
+
+	assert.deepStrictEqual (
+		expected,
+		actual,
+		"should sum to 114"
 	)
 })

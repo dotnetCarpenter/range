@@ -1,12 +1,12 @@
 // @ts-check
 
 import range from "../range.js"
-export default bubble
+export default bubbleSort
 
 /**
  * @param {any[]} array
  */
-function bubble (array) {
+function bubbleSort (array) {
 	const n = array.length
 	let swapped = false
 
