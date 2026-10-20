@@ -118,3 +118,23 @@ test ("Lazily map, filter, reduce over 4 indices with take", () => {
 		"should sum to 114"
 	)
 })
+
+test ("Easily create two tuples", () => {
+	const expected = [["fish", 432], ["oranges", 12], ["apples", 5]]
+	const actual = []
+	const input = ["fish", 432, "oranges", 12, "apples", 5]
+
+	for (let i of range(0, input.length, 2))
+		actual.push ([input[i], input[i + 1]])
+
+	assert.deepStrictEqual (
+		expected,
+		actual,
+		`${actual} should equal ${expected}`
+	)
+
+	let [fish, oranges, apples] = actual
+	assert.deepStrictEqual (expected[0], fish)
+	assert.deepStrictEqual (expected[1], oranges)
+	assert.deepStrictEqual (expected[2], apples)
+})

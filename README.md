@@ -1,6 +1,6 @@
 <a name="range"></a>
 
-## range([start], [stop], [step]) ⇒ <code>IteratorObject&lt;number&gt;</code>
+## range([start], [stop], [step]) ⇒ <code>IteratorObject&lt;number, any, any&gt;</code>
 The range generator represents an immutable sequence of numbers and is
 commonly used for looping a specific number of times in for-of loops
 or fill values with `.from()` method.
@@ -28,6 +28,12 @@ range(100_000_000)
 	.filter (x => x % 5 == 1) // 6, 21, 36, 51, 66, ...
 	.take (4)                 // 6, 21, 36, 51
 	.reduce ((a, b) => a + b) // Sum: 114
+
+// Easily create two tuples
+const input = ["fish", 432, "oranges", 12, "apples", 5]
+const tup = []
+for (let i of range(0, input.length, 2))
+	tup.push ([input[i], input[i + 1]]) // [["fish", 432], ["oranges", 12], ["apples", 5]]
 
 Array.from (range (10)) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
