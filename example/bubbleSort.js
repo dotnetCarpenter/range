@@ -1,5 +1,3 @@
-// @ts-check
-
 import range from "../range.js"
 export default bubbleSort
 

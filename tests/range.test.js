@@ -1,5 +1,3 @@
-// @ts-check
-
 import range from "../range.js"
 import assert from 'node:assert'
 import { test } from 'node:test'
