@@ -106,7 +106,7 @@ test ("Generating number sequences for calculations", () => {
 	)
 })
 
-test ("Lazily map, filter reduce over 4 indices", () => {
+test ("Lazily map, filter, reduce over 4 indices with take", () => {
 	const expected = 114
 	const actual = range(100_000_000)
 		.map (x => 3*x)           // 0, 3, 6, 9, 12, 15, 18, 21, ...

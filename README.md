@@ -22,7 +22,7 @@ Supports all iterator helper methods like `map()`, `reduce()`, `take()` etc.
 // Generating number sequences for calculations
 range (1, 101).reduce ((a, b) => a + b) // 5050
 
-// Lazily map, filter reduce over 4 indices
+// Lazily map, filter, reduce over 4 indices with take
 range(100_000_000)
 	.map (x => 3*x)           // 0, 3, 6, 9, 12, 15, 18, 21, ...
 	.filter (x => x % 5 == 1) // 6, 21, 36, 51, 66, ...
