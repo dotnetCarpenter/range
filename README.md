@@ -1,6 +1,6 @@
 <a name="range"></a>
 
-## range([start], [stop], [step]) ⇒ <code>IteratorObject&lt;number, any, any&gt;</code>
+## range ([start], [stop], [step]) ⇒ <code>IteratorObject&lt;number, any, any&gt;</code>
 The range generator represents an immutable sequence of numbers and is
 commonly used for looping a specific number of times in for-of loops
 or fill values with `.from()` method.
@@ -25,7 +25,7 @@ const sum = (a, b) => a + b
 range (1, 101).reduce (sum) // 5050
 
 // Lazily map, filter, reduce over 4 indices with take
-range(100_000_000)
+range (100_000_000)
 	.map (x => 3 * x)         // 0, 3, 6, 9, 12, 15, 18, 21, ...
 	.filter (x => x % 5 == 1) // 6, 21, 36, 51, 66, ...
 	.take (4)                 // 6, 21, 36, 51
@@ -34,8 +34,19 @@ range(100_000_000)
 // Easily create two tuples
 const input = ["fish", 432, "oranges", 12, "apples", 5]
 const tup = []
-for (let i of range(0, input.length, 2))
+for (let i of range (0, input.length, 2))
 	tup.push ([input[i], input[i + 1]]) // [["fish", 432], ["oranges", 12], ["apples", 5]]
+
+// OR use map/reduce if you're more FP inclined
+range (0, input.length, 2)
+	.map (n => [input[n], input[n + 1]])range(
+	.reduce ((a, t) => a.concat ([t]), []) // [["fish", 432], ["oranges", 12], ["apples", 5]]
+
+// OR use flatMap
+range (0, input.length, 2)
+	.flatMap (n => [[input[n], input[n + 1]]])
+	.toArray () // only use toArray() if you want an immediate value
+
 
 Array.from (range (10))         // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -61,7 +72,7 @@ function bubbleSort (array) {
 		for (let j of range (0, n - i - 1))
 			if (array[j] > array[j + 1])
 				swapped = swap (array, j, j + 1)
-
+		// optimization: exit if all elements are sorted
 		if (!swapped) break
 	}
 
@@ -71,5 +82,19 @@ function bubbleSort (array) {
 function swap (array, i, j) {
 	[array[i], array[j]] = [array[j], array[i]]
 	return true
+}
+```
+
+## implementation
+
+```js
+function *range (start=0, stop, step=1) {
+	if (stop == null)
+		stop = start, start = 0
+
+	while (Math.abs (start) < Math.abs (stop)) {
+		yield start
+		start += step
+	}
 }
 ```
