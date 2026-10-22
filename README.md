@@ -19,15 +19,17 @@ Supports all iterator helper methods like `map()`, `reduce()`, `take()` etc.
 ## usage
 
 ```js
+const sum = (a, b) => a + b
+
 // Generating number sequences for calculations
-range (1, 101).reduce ((a, b) => a + b) // 5050
+range (1, 101).reduce (sum) // 5050
 
 // Lazily map, filter, reduce over 4 indices with take
 range(100_000_000)
-	.map (x => 3*x)           // 0, 3, 6, 9, 12, 15, 18, 21, ...
+	.map (x => 3 * x)         // 0, 3, 6, 9, 12, 15, 18, 21, ...
 	.filter (x => x % 5 == 1) // 6, 21, 36, 51, 66, ...
 	.take (4)                 // 6, 21, 36, 51
-	.reduce ((a, b) => a + b) // Sum: 114
+	.reduce (sum)             // Sum: 114
 
 // Easily create two tuples
 const input = ["fish", 432, "oranges", 12, "apples", 5]
@@ -35,19 +37,19 @@ const tup = []
 for (let i of range(0, input.length, 2))
 	tup.push ([input[i], input[i + 1]]) // [["fish", 432], ["oranges", 12], ["apples", 5]]
 
-Array.from (range (10)) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Array.from (range (10))         // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-Array.from (range (1, 11)) // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Array.from (range (1, 11))      // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-Array.from (range (0, 30, 5)) // [0, 5, 10, 15, 20, 25]
+Array.from (range (0, 30, 5))   // [0, 5, 10, 15, 20, 25]
 
-Array.from (range (0, 10, 3)) // [0, 3, 6, 9]
+Array.from (range (0, 10, 3))   // [0, 3, 6, 9]
 
 Array.from (range (0, -10, -1)) // [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 
-Array.from (range (0)) // []
+Array.from (range (0))          // []
 
-Array.from (range (1, 0)) // []
+Array.from (range (1, 0))       // []
 ```
 
 ```js
