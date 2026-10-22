@@ -39,7 +39,7 @@ for (let i of range (0, input.length, 2))
 
 // OR use map/reduce if you're more FP inclined
 range (0, input.length, 2)
-	.map (n => [input[n], input[n + 1]])range(
+	.map (n => [input[n], input[n + 1]])
 	.reduce ((a, t) => a.concat ([t]), []) // [["fish", 432], ["oranges", 12], ["apples", 5]]
 
 // OR use flatMap
