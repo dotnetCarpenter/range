@@ -9,7 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  - test-node:
+  test-node:
+    name: Node.js Run JavaScript Everywhere
     runs-on: ubuntu-latest
     uses: actions/checkout@v7
     strategy:
@@ -25,7 +26,8 @@ jobs:
       - name: Run tests on node
         run: node --test
 
-  - test-bun:
+  test-bun:
+    name: Bun is a fast JavaScript runtime & toolkit. All in one.
     runs-on: ubuntu-latest
     uses: actions/checkout@v7
     steps:
@@ -37,7 +39,8 @@ jobs:
       - name: Run tests on bun
         run: bun test
 
-  - test-deno:
+  test-deno:
+    name: Deno - Faster than Node; more stable than Bun.
     runs-on: ubuntu-latest
     uses: actions/checkout@v7
     steps:
