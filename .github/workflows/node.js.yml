@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Run tests on node
+      - name: Run tests on Node.js
         run: node --test
 
   test-bun:
