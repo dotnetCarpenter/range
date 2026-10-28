@@ -12,12 +12,12 @@ jobs:
   test-node:
     name: Node.js Run JavaScript Everywhere
     runs-on: ubuntu-latest
-    uses: actions/checkout@v7
     strategy:
       matrix:
         node-version: [22.x, 24.x, 26.x]
         # Supported Node.js releases https://nodejs.org/en/about/releases/
     steps:
+      - uses: actions/checkout@v7
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v7
         with:
@@ -30,6 +30,7 @@ jobs:
     name: Bun is a fast JavaScript runtime & toolkit. All in one.
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v7
       - name: Intall latest bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -42,6 +43,7 @@ jobs:
     name: Deno - Faster than Node; more stable than Bun.
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v7
       - name: Intall latest deno
         uses: denoland/setup-deno@v2v2.x
         with:
