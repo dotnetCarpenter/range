@@ -26,18 +26,17 @@ jobs:
       uses: actions/setup-node@v7
       with:
         node-version: ${{ matrix.node-version }}
-        # cache: 'npm'
-        # cache-dependency-path: 'package-lock.json'
 
-    - name: Run tests
+    - name: Run tests on node
       run: npm test
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Run tests on bun
       uses: oven-sh/setup-bun@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        # cache: 'npm'
-        # cache-dependency-path: 'package-lock.json'
-
-    - name: Run tests
       run: bun test
+      with:
+        bun-version: latest
+
+    - name: Run tests on deno
+      uses: denoland/setup-deno@v2
+      with:
+        deno-version: latest
