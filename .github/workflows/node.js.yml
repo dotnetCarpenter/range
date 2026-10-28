@@ -32,11 +32,12 @@ jobs:
 
     - name: Run tests on bun
       uses: oven-sh/setup-bun@v2
-      run: bun test
       with:
         bun-version: latest
+      run: bun test
 
     - name: Run tests on deno
-      uses: denoland/setup-deno@v2
+      uses: denoland/setup-deno@v2v2.x
       with:
         deno-version: latest
+      run: deno test
