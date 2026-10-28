@@ -11,32 +11,34 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  runs-on: ubuntu-latest
+  uses: actions/checkout@v7
 
-    runs-on: ubuntu-latest
+  tests:
+    - test:
+      strategy:
+        matrix:
+          node-version: [22.x, 24.x, 26.x]
+          # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    strategy:
-      matrix:
-        node-version: [22.x, 24.x, 26.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+      steps:
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v7
+          with:
+            node-version: ${{ matrix.node-version }}
 
-    steps:
-    - uses: actions/checkout@v7
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v7
-      with:
-        node-version: ${{ matrix.node-version }}
+        - name: Run tests on node
+          run: node --test
 
-    - name: Run tests on node
-      run: npm test
-
-    - name: Run tests on bun
+    - test:
+      name: Run tests on bun
       uses: oven-sh/setup-bun@v2
       with:
         bun-version: latest
       run: bun test
 
-    - name: Run tests on deno
+    - test:
+      name: Run tests on deno
       uses: denoland/setup-deno@v2v2.x
       with:
         deno-version: latest
