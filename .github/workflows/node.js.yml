@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Intall latest deno
-        uses: denoland/setup-deno@v2v2.x
+        uses: denoland/setup-deno@v2
         with:
           deno-version: latest
 
