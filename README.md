@@ -1,3 +1,5 @@
+[![Tests CI status](https://github.com/dotnetCarpenter/range/actions/workflows/node.js.yml/badge.svg)](https://github.com/dotnetCarpenter/range/actions/workflows/node.js.yml)
+
 <a name="range"></a>
 
 ## range ([start], [stop], [step]) ⇒ <code>IteratorObject&lt;number, any, any&gt;</code>
