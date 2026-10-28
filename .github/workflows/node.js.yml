@@ -30,7 +30,14 @@ jobs:
         # cache-dependency-path: 'package-lock.json'
 
     - name: Run tests
-      run: |
-        node --test
-        bun test
-        deno test
+      run: npm test
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: oven-sh/setup-bun@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        # cache: 'npm'
+        # cache-dependency-path: 'package-lock.json'
+
+    - name: Run tests
+      run: bun test
