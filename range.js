@@ -13,11 +13,18 @@ export default range
  * @returns {IteratorObject<number, any, any>}
  */
 function *range (start=0, stop, step=1) {
+	let index = 0
 	if (stop == null)
 		stop = start, start = 0
 
-	while (Math.abs (start) < Math.abs (stop)) {
+	if (step < 0 && start > stop) // start positive to negative end
+		[stop, index] = [start, stop]
+	else
+		index = start
+
+	while (index < stop) {
 		yield start
 		start += step
+		index += Math.abs (step)
 	}
 }

@@ -8,8 +8,8 @@ test ("range (10) should create integers from 0 to 9", () => {
 
 	for (let i of actual)
 		assert.strictEqual (
-			expected[i],
 			i,
+			expected[i],
 			"i should equal the index of expected"
 		)
 })
@@ -81,7 +81,7 @@ test ("Modular range: Array.from (range(-5, 5)) should create an array from nega
 })
 
 test ("Modular range: Array.from (range(5, 5, -1)) should create an array from positive to negative integers", () => {
-	const expected = [4, 3, 2, 1, 0, -1, -2, -3, -4, -5]
+	const expected = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4]
 	const actual = range (5, -5, -1)
 
 	assert.deepStrictEqual (
