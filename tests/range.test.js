@@ -93,6 +93,12 @@ test ("Array.from (range(1, 0)) should immediately stop and create an empty arra
 	)
 })
 
+test ("Array.from (range(0, 1, 0)) should throw a TypeError", () => {
+	const expected = new TypeError ("step must not be zero")
+
+	assert.throws (() => Array.from (range (0, 1, 0)), expected)
+})
+
 test ("Generating number sequences for calculations", () => {
 	const expected = 5050
 	const actual = range (1, 101).reduce ((a, b) => a + b)
