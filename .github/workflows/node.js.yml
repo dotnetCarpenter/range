@@ -30,4 +30,7 @@ jobs:
         # cache-dependency-path: 'package-lock.json'
 
     - name: Run tests
-      run: npm test
+      run: |
+        node --test
+        bun test
+        deno test
