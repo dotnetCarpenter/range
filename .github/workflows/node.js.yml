@@ -29,7 +29,6 @@ jobs:
   test-bun:
     name: Bun is a fast JavaScript runtime & toolkit. All in one.
     runs-on: ubuntu-latest
-    uses: actions/checkout@v7
     steps:
       - name: Intall latest bun
         uses: oven-sh/setup-bun@v2
@@ -42,7 +41,6 @@ jobs:
   test-deno:
     name: Deno - Faster than Node; more stable than Bun.
     runs-on: ubuntu-latest
-    uses: actions/checkout@v7
     steps:
       - name: Intall latest deno
         uses: denoland/setup-deno@v2v2.x
