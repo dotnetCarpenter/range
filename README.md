@@ -1,4 +1,4 @@
-[![Tests CI status](https://github.com/dotnetCarpenter/range/actions/workflows/node.js.yml/badge.svg)](https://github.com/dotnetCarpenter/range/actions/workflows/node.js.yml)
+[![CI Tests status](https://github.com/dotnetCarpenter/range/actions/workflows/node.js.yml/badge.svg)](https://github.com/dotnetCarpenter/range/actions/workflows/node.js.yml)
 
 <a name="range"></a>
 
