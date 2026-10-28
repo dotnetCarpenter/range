@@ -12,8 +12,8 @@ suite ("test generic n-tuple that uses range", () => {
 		const actual = create2tuple (input).toArray ()
 
 		assert.deepStrictEqual (
-			expected,
 			actual,
+			expected,
 			'should be [["fish", 432], ["oranges", 12], ["apples", 5]]'
 		)
 

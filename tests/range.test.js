@@ -19,8 +19,8 @@ test ("Array.from (range (10)) should create an array with integers from 0 to 9"
 	const actual = range (10)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -30,8 +30,8 @@ test ("Array.from (range (1, 11)) should create an array with integers from 1 to
 	const actual = range (1, 11)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -41,8 +41,8 @@ test ("Array.from (range (0, 30, 5)) should create an array with integers", () =
 	const actual = range (0, 30, 5)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -52,8 +52,8 @@ test ("Array.from (range(0, 10, 3)) should create an array with integers", () =>
 	const actual = range (0, 10, 3)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -63,8 +63,8 @@ test ("Negative steps: Array.from (range(0, -10, -1)) should create an array wit
 	const actual = range (0, -10, -1)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -75,8 +75,8 @@ test ("Array.from (range(0)) should create an empty array", () => {
 	const actual = range (0)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -87,8 +87,8 @@ test ("Array.from (range(1, 0)) should immediately stop and create an empty arra
 	const actual = range (1, 0)
 
 	assert.deepStrictEqual (
-		expected,
 		Array.from (actual),
+		expected,
 		"actual should be able to create an array like expected"
 	)
 })
@@ -98,8 +98,8 @@ test ("Generating number sequences for calculations", () => {
 	const actual = range (1, 101).reduce ((a, b) => a + b)
 
 	assert.strictEqual (
-		expected,
 		actual,
+		expected,
 		`${actual} should equal ${expected}`
 	)
 })
@@ -113,8 +113,8 @@ test ("Lazily map, filter, reduce over 4 indices with take", () => {
 		.reduce ((a, b) => a + b) // Sum: 114
 
 	assert.deepStrictEqual (
-		expected,
 		actual,
+		expected,
 		"should sum to 114"
 	)
 })
@@ -128,8 +128,8 @@ test ("Easily create two tuples", () => {
 		actual.push ([input[i], input[i + 1]])
 
 	assert.deepStrictEqual (
-		expected,
 		actual,
+		expected,
 		`${actual} should equal ${expected}`
 	)
 

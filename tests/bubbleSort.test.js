@@ -7,8 +7,8 @@ suite ("test bubble sort that uses range", (context) => {
 		const expected = [3,5,6]
 		const actual = bubbleSort ([5,3,6])
 		assert.deepStrictEqual (
-			expected,
 			actual,
+			expected,
 			"should swap 3 and 5 in [5,3,6]"
 		)
 	})
@@ -17,8 +17,8 @@ suite ("test bubble sort that uses range", (context) => {
 		const expected = [11, 12, 22, 25, 34, 64, 90]
 		const actual = bubbleSort ([64, 34, 25, 12, 22, 11, 90])
 		assert.deepStrictEqual (
-			expected,
 			actual,
+			expected,
 			`should equal ${expected}`
 		)
 	})
