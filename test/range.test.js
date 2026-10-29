@@ -69,6 +69,17 @@ test ("Negative steps: Array.from (range(0, -10, -1)) should create an array wit
 	)
 })
 
+test ("Negative steps: Array.from (range ((423, 420, -2)) should create an array with decrementing integers", () => {
+	const expected = [423, 421]
+	const actual = range (423, 420, -2)
+
+	assert.deepStrictEqual (
+		Array.from (actual),
+		expected,
+		`actual should be equal to ${expected}`
+	)
+})
+
 test ("Modular range: Array.from (range(-5, 5)) should create an array from negative to positive integers", () => {
 	const expected = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
 	const actual = range (-5, 5)
