@@ -16,8 +16,12 @@ function *range (start=0, stop, step=1) {
 	if (stop == null)
 		stop = start, start = 0
 
-	while (Math.abs (start) < Math.abs (stop)) {
-		yield start
-		start += step
+	let stepsLeft = Math.floor ((start - stop) / step)
+	//  test if there are any steps
+	if (stepsLeft < 0) {
+		while (stepsLeft++ !== 0) {
+			yield start
+			start += step
+		}
 	}
 }
