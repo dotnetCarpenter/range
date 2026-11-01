@@ -13,6 +13,7 @@ export default range
  * @returns {IteratorObject<number, any, any>}
  */
 function *range (start=0, stop, step=1) {
+	if (step === 0) throw new TypeError ("step must not be zero")
 	if (stop == null)
 		stop = start, start = 0
 
