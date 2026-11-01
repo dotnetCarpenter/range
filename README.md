@@ -91,16 +91,20 @@ function swap (array, i, j) {
 
 ```js
 function *range (start=0, stop, step=1) {
+	if (step === 0) throw new TypeError ("step must not be zero")
 	if (stop == null)
 		stop = start, start = 0
 
+	// calculate number of steps (a negative number)
 	let stepsLeft = Math.floor ((start - stop) / step)
-
+	// if there are any steps
 	if (stepsLeft < 0) {
+		// yield for each step until reaching 0
 		while (stepsLeft++ !== 0) {
 			yield start
 			start += step
 		}
 	}
 }
+
 ```
