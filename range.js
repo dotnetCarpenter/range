@@ -1,9 +1,9 @@
 export default range
 
 /**
- * The range generator represents an immutable sequence of numbers and is
- * commonly used for looping a specific number of times in for-of loops
- * or fill values with `.from()` method.
+ * The range generator represents a stream of immutable sequence of numbers and is
+ * commonly used for looping a specific number of times in for-of loops or fill values
+ * with `.from()` method.
  *
  * Supports all iterator helper methods like `map()`, `reduce()`, `take()` etc.
  * @kind function
@@ -16,9 +16,11 @@ function *range (start=0, stop, step=1) {
 	if (stop == null)
 		stop = start, start = 0
 
+	// calculate number of steps (a negative number)
 	let stepsLeft = Math.floor ((start - stop) / step)
-	//  test if there are any steps
+	// if there are any steps
 	if (stepsLeft < 0) {
+		// yield for each step until reaching 0
 		while (stepsLeft++ !== 0) {
 			yield start
 			start += step
