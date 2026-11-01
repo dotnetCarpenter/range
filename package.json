@@ -19,6 +19,7 @@
   "type": "module",
   "main": "range.js",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "test:locally": "act -P ubuntu-latest=-self-hosted"
   }
 }
