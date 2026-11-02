@@ -20,6 +20,7 @@
   "main": "range.js",
   "scripts": {
     "test": "node --test",
-    "test:local": "act -P ubuntu-latest=-self-hosted"
+    "test:local": "act -P ubuntu-latest=-self-hosted",
+    "test:coverage:rapport": "node --test --experimental-test-coverage --test-reporter lcov --test-reporter-destination ./rapport.lcov.info && npx lcoview rapport.lcov.info | tail -1 | xargs open"
   }
 }
